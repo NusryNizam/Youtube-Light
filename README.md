@@ -1,6 +1,6 @@
 ## Youtube-Light
 
-Lightweight website to watch youtube without distraction. Live at https://ytlight.netlify.app
+Lightweight website made using VueJS to watch youtube without distraction. Live at https://ytlight.netlify.app
 
 ## Project setup
 
