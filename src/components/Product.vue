@@ -1,5 +1,5 @@
 <template>
-  <div id="gridContainer" @keyup.27="hideVideo">
+  <div id="gridContainer">
     <input
       id="userInput"
       placeholder="Paste any YouTube URL here (Ctrl + V)"
@@ -41,7 +41,7 @@ export default {
       userInput: "",
       src: "",
       isLoaded: false,
-      invalidUrl: false
+      invalidUrl: false,
     };
   },
 
@@ -81,12 +81,14 @@ export default {
     hideVideo() {
       this.isLoaded = false;
       this.userInput = "";
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
 body {
   background-color: rgb(36, 36, 36);
   margin: 0;
