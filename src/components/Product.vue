@@ -14,7 +14,12 @@
     />
 
     <transition name="video" key="forVid">
-      <iframe v-if="isLoaded" allowfullscreen="allowFullScreen" class="video" :src="src"></iframe>
+      <iframe
+        v-if="isLoaded"
+        allowfullscreen="allowFullScreen"
+        class="video"
+        :src="src"
+      ></iframe>
     </transition>
 
     <transition name="button" key="forBtn">
@@ -29,7 +34,9 @@
       </button>
     </transition>
 
-    <p v-show="invalidUrl" class="error">Please enter a valid URL from YouTube</p>
+    <p v-show="invalidUrl" class="error">
+      Please enter a valid URL from YouTube
+    </p>
   </div>
 </template>
 
@@ -109,34 +116,31 @@ body {
   color: rgb(138, 138, 138);
   background-color: rgb(36, 36, 36);
   font-size: 1.5em;
-  font-family: Inter;
+  font-family: 'Inter';
   caret-color: transparent;
   text-align: center;
 }
 
 .video {
-  grid-column: 3/4;
-  grid-row: 3/4;
-  text-align: center;
+  width: 100%;
+  height: 100%;
+  grid-row: 2/5;
+  grid-column: 2/5;
   border: none;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.418);
   background-color: rgb(117, 117, 117);
   border-radius: 5px;
-  transform: scale(2);
 }
 
 #closeButton {
   border-radius: 50%;
-  padding: 10px;
   background-color: rgb(61, 61, 61);
   border: 1px solid rgb(61, 61, 61);
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.109);
-  font-family: Dyuthi;
   width: 50px;
   height: 50px;
   margin: auto;
-  text-align: center;
-  font-size: 30px;
+  font-size: 20px;
   cursor: pointer;
   transition: 200ms ease;
   grid-column: 3/4;
@@ -191,15 +195,18 @@ body {
   margin-top: 60px;
 }
 
-@media (max-width: 1080px) {
-  #gridContainer {
-    grid-template-columns: 10px 1fr 1.5fr 1fr 10px;
-  }
+@media (min-width: 1080px) {
   .video {
     width: 100%;
+    height: 100%;
+    grid-row: 2/5;
+    grid-column: 2/5;
   }
-  #userInput {
-    font-size: 1em;
+}
+
+@media (max-width: 500px) {
+  #gridContainer {
+    grid-template-columns: 10px 1fr 1fr 1fr 10px;
   }
 }
 </style>
